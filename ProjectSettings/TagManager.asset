@@ -3,7 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
+<<<<<<< HEAD
   tags: []
+=======
+  tags:
+  - Cube
+>>>>>>> parent of b2e94e5... Merge pull request #2 from copperfist/Coding(Dan)
   layers:
   - Default
   - TransparentFX

@@ -9,7 +9,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 2632349341665986243}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 0.25
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -35,7 +35,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 2121282228}
-  targetPoints: []
+  targetWaypoints: []
+  tillWaypoint: {fileID: 0}
+  exitWaypoint: {fileID: 0}
 --- !u!1001 &6001815168019241635
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -46,7 +48,7 @@ PrefabInstance:
     - target: {fileID: 8632627387863571552, guid: 9561304d99bc59347adec500c6da07f6,
         type: 3}
       propertyPath: m_Name
-      value: NPC Spawn
+      value: NPC Spawn Variant
       objectReference: {fileID: 0}
     - target: {fileID: 8632627387863571581, guid: 9561304d99bc59347adec500c6da07f6,
         type: 3}
@@ -102,6 +104,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8632627387984127216, guid: 9561304d99bc59347adec500c6da07f6,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.303
+      objectReference: {fileID: 0}
+    - target: {fileID: 8632627387481648381, guid: 9561304d99bc59347adec500c6da07f6,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.30300003
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9561304d99bc59347adec500c6da07f6, type: 3}

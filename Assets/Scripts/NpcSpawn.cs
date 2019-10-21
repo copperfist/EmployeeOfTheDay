@@ -14,7 +14,7 @@ public class NpcSpawn : MonoBehaviour
     {
           spawnTimer -= Time.deltaTime;
 
-        Debug.Log(spawnTimer);
+        //Debug.Log(spawnTimer);
 
         if(spawnTimer <= 0)
         {

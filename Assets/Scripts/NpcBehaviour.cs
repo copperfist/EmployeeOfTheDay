@@ -7,30 +7,32 @@ public class NpcBehaviour : MonoBehaviour
 {
     public NavMeshAgent agent;
     public GameObject[] targetWaypoints;
-    public GameObject tillWaypoint;
-    public GameObject exitWaypoint;
+    public GameObject[] payAndLeavePoints;
 
 
     private GameObject currentWaypoint;
+
     private int index;
-    private float minDistance = 0.3f;
+    private int payIndex = 0;
+    private float minDistance = 0.5f;
     private float distance;
 
     private void Start() //Pick a random waypoint to start
     {
         targetWaypoints = GameObject.FindGameObjectsWithTag("targets");
-        tillWaypoint = GameObject.FindGameObjectWithTag("tillPayment");
+        payAndLeavePoints = GameObject.FindGameObjectsWithTag("PayAndLeave");
+  
+
         index = Random.Range(0, targetWaypoints.Length);
         currentWaypoint = targetWaypoints[index];
-        Debug.Log("Going to" + currentWaypoint);
     }
 
 
     private void Update()
     {
         distance = Vector3.Distance(transform.position, currentWaypoint.transform.position);
-        Debug.Log(distance);
         CheckDistanceToWaypoint(distance);
+
         agent.SetDestination(currentWaypoint.transform.position);
 
     }
@@ -39,12 +41,13 @@ public class NpcBehaviour : MonoBehaviour
     {
         if(currentDistance <= minDistance)
         {
-            Debug.Log("To the till");
             SendToTill();
         }
     }
     void SendToTill()
     {
-        currentWaypoint.transform.position = tillWaypoint.transform.position;
+        currentWaypoint = payAndLeavePoints[payIndex];
+        payIndex++;
     }
+
 }

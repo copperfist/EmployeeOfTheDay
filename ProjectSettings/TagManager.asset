@@ -6,6 +6,11 @@ TagManager:
   tags:
   - Cube
   - targets
+<<<<<<< HEAD
+=======
+  - tillPayment
+  - Exit
+>>>>>>> parent of 7b4ea67... Npc Loop
   layers:
   - Default
   - TransparentFX

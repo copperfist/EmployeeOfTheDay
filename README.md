@@ -1,2 +1,0 @@
-# EmployeeOfTheDay
-Couch Coop Game

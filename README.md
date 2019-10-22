@@ -1,2 +1,0 @@
-# EmployeeOfTheMonth
-Couch Coop Game

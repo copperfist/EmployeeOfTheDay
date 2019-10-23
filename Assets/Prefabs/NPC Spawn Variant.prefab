@@ -46,7 +46,12 @@ PrefabInstance:
     - target: {fileID: 8632627387863571552, guid: 9561304d99bc59347adec500c6da07f6,
         type: 3}
       propertyPath: m_Name
-      value: NPC Spawn
+      value: NPC Spawn Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 8632627387863571552, guid: 9561304d99bc59347adec500c6da07f6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NPC
       objectReference: {fileID: 0}
     - target: {fileID: 8632627387863571581, guid: 9561304d99bc59347adec500c6da07f6,
         type: 3}

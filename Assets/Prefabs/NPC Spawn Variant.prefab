@@ -35,8 +35,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 2121282228}
-  targetWaypoints: []
-  payAndLeavePoints: []
+  targetPoints: []
 --- !u!1001 &6001815168019241635
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -47,12 +46,7 @@ PrefabInstance:
     - target: {fileID: 8632627387863571552, guid: 9561304d99bc59347adec500c6da07f6,
         type: 3}
       propertyPath: m_Name
-      value: NPC Spawn Variant
-      objectReference: {fileID: 0}
-    - target: {fileID: 8632627387863571552, guid: 9561304d99bc59347adec500c6da07f6,
-        type: 3}
-      propertyPath: m_TagString
-      value: NPC
+      value: NPC Spawn
       objectReference: {fileID: 0}
     - target: {fileID: 8632627387863571581, guid: 9561304d99bc59347adec500c6da07f6,
         type: 3}

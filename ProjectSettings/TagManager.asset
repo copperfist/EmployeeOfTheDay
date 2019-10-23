@@ -6,8 +6,6 @@ TagManager:
   tags:
   - Cube
   - targets
-  - PayAndLeave
-  - NPC
   layers:
   - Default
   - TransparentFX

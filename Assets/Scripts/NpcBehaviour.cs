@@ -6,48 +6,20 @@ using UnityEngine.AI;
 public class NpcBehaviour : MonoBehaviour
 {
     public NavMeshAgent agent;
-    public GameObject[] targetWaypoints;
-    public GameObject[] payAndLeavePoints;
-
-
-    private GameObject currentWaypoint;
-
+    public GameObject[] targetPoints;
+    private GameObject currentPoint;
     private int index;
-    private int payIndex = 0;
-    private float minDistance = 0.5f;
-    private float distance;
 
-    private void Start() //Pick a random waypoint to start
+    private void Start()
     {
-        targetWaypoints = GameObject.FindGameObjectsWithTag("targets");
-        payAndLeavePoints = GameObject.FindGameObjectsWithTag("PayAndLeave");
-
-
-        index = Random.Range(0, targetWaypoints.Length);
-        currentWaypoint = targetWaypoints[index];
+        targetPoints = GameObject.FindGameObjectsWithTag("targets");
+        index = Random.Range(0, targetPoints.Length);
+        currentPoint = targetPoints[index];
     }
 
 
     private void Update()
     {
-        distance = Vector3.Distance(transform.position, currentWaypoint.transform.position);
-        CheckDistanceToWaypoint(distance);
-
-        agent.SetDestination(currentWaypoint.transform.position);
-
+        agent.SetDestination(currentPoint.transform.position);
     }
-
-    void CheckDistanceToWaypoint(float currentDistance)
-    {
-        if (currentDistance <= minDistance)
-        {
-            SendToTill();
-        }
-    }
-    void SendToTill()
-    {
-        currentWaypoint = payAndLeavePoints[payIndex];
-        payIndex++;
-    }
-
 }

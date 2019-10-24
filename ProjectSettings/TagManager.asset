@@ -8,7 +8,8 @@ TagManager:
   - targets
   - PayAndLeave
   - NPC
-
+  - Seats
+  - Seat2
   layers:
   - Default
   - TransparentFX

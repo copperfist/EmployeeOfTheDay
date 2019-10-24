@@ -14,8 +14,6 @@ public class NpcSpawn : MonoBehaviour
     {
           spawnTimer -= Time.deltaTime;
 
-        Debug.Log(spawnTimer);
-
         if(spawnTimer <= 0)
         {
             Instantiate(npcPrefab, spawnpoints.position, spawnpoints.rotation);

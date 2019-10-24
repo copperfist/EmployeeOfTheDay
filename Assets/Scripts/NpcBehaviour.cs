@@ -48,5 +48,6 @@ public class NpcBehaviour : MonoBehaviour
     {
         currentWaypoint = payAndLeavePoints[payIndex];
         payIndex++;
+
     }
 }

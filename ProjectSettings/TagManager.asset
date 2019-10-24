@@ -6,10 +6,9 @@ TagManager:
   tags:
   - Cube
   - targets
-  - PayAndLeave
   - NPC
   - Seats
-  - Seat2
+  - Exit
   layers:
   - Default
   - TransparentFX

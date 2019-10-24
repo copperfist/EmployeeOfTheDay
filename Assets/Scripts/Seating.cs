@@ -1,26 +1,30 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
 
 public class Seating : MonoBehaviour
 {
-
-    
-    public bool isTaken = false;
+    public bool canLeave = false;
+    private float leaveTimer = 0.5f;
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("NPC"))
+        if (Input.GetKey("joystick button 0") && other.CompareTag("NPC"))
         {
-            isTaken = true;            
+            canLeave = true;         
         }
+
     }
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("NPC"))
+         leaveTimer -= Time.deltaTime;
+
+        Debug.Log(leaveTimer);
+
+        if(leaveTimer <= 0)
         {
-            isTaken = false;
+            canLeave = false;
+            leaveTimer = 0.5f;
         }
     }
 }

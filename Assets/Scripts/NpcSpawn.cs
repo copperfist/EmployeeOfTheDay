@@ -17,7 +17,7 @@ public class NpcSpawn : MonoBehaviour
         if(spawnTimer <= 0)
         {
             Instantiate(npcPrefab, spawnpoints.position, spawnpoints.rotation);
-            spawnTimer = 5.0f;
+            spawnTimer = 10.0f;
         }
     }
 

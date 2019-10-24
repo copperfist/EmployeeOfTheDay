@@ -1,38 +1,40 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
 
 public class NPCQueue : MonoBehaviour
 {
-    public NavMeshAgent agent;
-    public GameObject Seat1;
-    public GameObject Seat2;
-
-    private GameObject currentWaypoint;
-    private int index = 0;
+    public GameObject seat1;
+    public GameObject exit;
+    public float speed = 2.0f;
+    private float step;
 
     private void Start()
     {
-        Seat1 = GameObject.FindGameObjectWithTag("Seats");
-        Seat2 = GameObject.FindGameObjectWithTag("Seat2");
 
-        currentWaypoint = Seat1;
+        seat1 = GameObject.FindGameObjectWithTag("Seats");
+        exit = GameObject.FindGameObjectWithTag("Exit");
+        step = speed * Time.deltaTime;
+
     }
-
     private void Update()
     {
-
-        if (GameObject.Find("Seating").GetComponent<Seating>().isTaken != true)
-        {
-            agent.SetDestination(currentWaypoint.transform.position);
-        }
-        else
-        {
-            Debug.Log("Going to seat 2");
-            currentWaypoint = Seat2;
-            agent.SetDestination(currentWaypoint.transform.position);
-        }
+        MoveToSeat();
+        MoveToExit();
     }
 
+    private void MoveToSeat()
+    {
+        if (GameObject.Find("Seating").GetComponent<Seating>().canLeave != true)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, seat1.transform.position, step);
+        }
+    }
+    private void MoveToExit()
+    {
+        if (GameObject.Find("Seating").GetComponent<Seating>().canLeave != false)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, exit.transform.position, step);
+        }
+    }
 }

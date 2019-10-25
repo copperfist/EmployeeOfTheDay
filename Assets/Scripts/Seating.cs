@@ -5,26 +5,20 @@ using UnityEngine;
 public class Seating : MonoBehaviour
 {
     public bool canLeave = false;
-    private float leaveTimer = 0.5f;
+    public bool reachedTill = false;
 
     private void OnTriggerStay(Collider other)
     {
-        if (Input.GetKey("joystick button 0") && other.CompareTag("NPC"))
+        if (Input.GetKey("joystick button 0") && reachedTill == true && GameObject.Find("Till Opperation").GetComponent<PlayerOperatingTill>().isTillActive == true)
         {
-            canLeave = true;         
+            canLeave = true;
         }
-
     }
-    private void OnTriggerExit(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
-         leaveTimer -= Time.deltaTime;
-
-        Debug.Log(leaveTimer);
-
-        if(leaveTimer <= 0)
+        if (other.CompareTag("NPC"))
         {
-            canLeave = false;
-            leaveTimer = 0.5f;
+            reachedTill = true;
         }
     }
 }

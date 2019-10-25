@@ -20,21 +20,22 @@ public class NPCQueue : MonoBehaviour
     private void Update()
     {
         MoveToSeat();
-        MoveToExit();
+
+        if (GameObject.Find("Seating").GetComponent<Seating>().canLeave == true && GameObject.Find("Seating").GetComponent<Seating>().reachedTill == true)
+        {
+            MoveToExit();
+        }
     }
 
     private void MoveToSeat()
     {
-        if (GameObject.Find("Seating").GetComponent<Seating>().canLeave != true)
+        if (GameObject.Find("Seating").GetComponent<Seating>().canLeave == false)
         {
             transform.position = Vector3.MoveTowards(transform.position, seat1.transform.position, step);
         }
     }
     private void MoveToExit()
     {
-        if (GameObject.Find("Seating").GetComponent<Seating>().canLeave != false)
-        {
-            transform.position = Vector3.MoveTowards(transform.position, exit.transform.position, step);
-        }
+        transform.position = Vector3.MoveTowards(transform.position, exit.transform.position, step);
     }
 }

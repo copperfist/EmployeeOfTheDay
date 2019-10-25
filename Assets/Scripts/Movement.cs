@@ -7,6 +7,7 @@ public class Movement : MonoBehaviour
 
     public float movementSpeed = 5.0f;
 
+    public GameObject interactObject;
     public GameObject tempParent;
     public Transform guide;
     public GameObject item;
@@ -58,7 +59,7 @@ public class Movement : MonoBehaviour
                     isAPressed = false;                    
                     item.GetComponent<Rigidbody>().useGravity = true;
                     item.GetComponent<Rigidbody>().isKinematic = false;
-                    item.transform.parent = null;
+                    item.transform.parent = interactObject.transform;
                     item.transform.position = guide.transform.position;                 
                     item = null;                    
                 }

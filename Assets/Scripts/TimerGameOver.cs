@@ -18,7 +18,11 @@ public class TimerGameOver : MonoBehaviour
         if (countDownStartValue > 0)
         {
             TimeSpan spanTime = TimeSpan.FromSeconds(countDownStartValue); 
-            timerUI.text = spanTime.Minutes + ":" + spanTime.Seconds;
+            timerUI.text = "0" + spanTime.Minutes + ":" + spanTime.Seconds;
+            if (spanTime.Seconds < 10)
+            {
+                timerUI.text = "0" + spanTime.Minutes + ":0" + spanTime.Seconds;
+            }
             countDownStartValue--;
             Invoke("countDownTimer", 1.0f); 
         }else

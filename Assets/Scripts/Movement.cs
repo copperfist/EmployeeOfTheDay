@@ -7,6 +7,7 @@ public class Movement : MonoBehaviour
 
     public float movementSpeed = 5.0f;
 
+    public GameObject interactObject;
     public GameObject tempParent;
     public Transform guide;
     public GameObject item;
@@ -41,7 +42,7 @@ public class Movement : MonoBehaviour
 
         if (other.gameObject.tag == "Cube")
         {
-            if (Input.GetKey("joystick button 0"))
+            if (Input.GetKey(KeyCode.E))
             {                
                 if (isAPressed != true)
                 {
